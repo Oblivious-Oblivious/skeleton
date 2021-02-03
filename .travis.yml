@@ -7,4 +7,3 @@ crystal:
 
 script:
   - crystal spec spec/*.spec.cr
-  - crystal tool format --check
