@@ -1,0 +1,30 @@
+name: skeleton
+version: 0.1.0
+
+authors:
+  - Thanasis Papapostolou (Oblivious) <me262thanos@gmail.com>
+
+description: |
+  A very minimal http server api serving as a platform for incremental middleware
+
+crystal: 0.36.1
+
+#dependencies:
+  #(ADD DEPENDS)
+    #(ADD SUB DEPENDS)
+
+#development_dependencies:
+  #(ADD PRIVATE DEPENDS)
+    #(ADD PRIVATE SUB DEPENDS)
+
+#libraries:
+  #(ADD LIBS)
+
+executables:
+  - skeleton
+
+targets:
+  shards:
+    main: src/skeleton.cr
+
+license: GPLv3
