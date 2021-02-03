@@ -9,9 +9,11 @@ description: |
 
 crystal: 0.36.1
 
-#dependencies:
-  #(ADD DEPENDS)
-    #(ADD SUB DEPENDS)
+dependencies:
+  cors:
+    github: prutya/cors
+  radix:
+    github: luislavena/radix
 
 #development_dependencies:
   #(ADD PRIVATE DEPENDS)

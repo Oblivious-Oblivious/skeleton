@@ -1,2 +1,2 @@
 require "./spec_helper"
-require "./skeleton/version.spec"
+require "./skeleton/**"

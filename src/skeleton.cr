@@ -1,2 +1,1 @@
-require "./skeleton/version"
-require "./skeleton/signals"
+require "./skeleton/**"
