@@ -1,6 +1,7 @@
 require "http/server"
 
 module Skeleton
+    # TODO -> REMOVE UNECESSARY CLASS VARIABLES
     class Server
         @server : HTTP::Server;
         @address : Socket::IPAddress;

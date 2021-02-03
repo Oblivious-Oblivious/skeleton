@@ -2,9 +2,9 @@ require "http/server"
 require "radix"
 
 module Skeleton
+    # TODO -> REMOVE IF STATEMENTS
     class RouteHandler
         alias Callback = HTTP::Server::Context, Hash(String, String) -> HTTP::Server::Context;
-        # alias RouteContext = NamedTuple(callback: Callback, params: Hash(String, String));
 
         include HTTP::Handler;
 
