@@ -1,0 +1,10 @@
+# .travis.yml
+language: crystal
+
+crystal:
+  - latest
+  - nightly
+
+script:
+  - crystal spec spec/*.spec.cr
+  - crystal tool format
