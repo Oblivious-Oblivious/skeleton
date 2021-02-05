@@ -4,18 +4,12 @@ require "radix"
 module Skeleton
     # TODO -> REMOVE IF STATEMENTS
     class RouteHandler
-        alias Callback = HTTP::Server::Context, Hash(String, String) -> HTTP::Server::Context;
-
         include HTTP::Handler;
+        alias Callback = HTTP::Server::Context, Hash(String, String) -> HTTP::Server::Context;
 
         getter :tree, :static_routes;
 
-        def initialize
-            @tree = Radix::Tree(Callback).new;
-            @static_routes = {} of String => Callback;
-        end
-
-        def add_route(key : String, callback : Callback)
+        private def add_route(key : String, callback : Callback)
             if key.includes?(':') || key.includes?('*')
                 tree.add key, callback;
             else
@@ -28,7 +22,7 @@ module Skeleton
             end
         end
 
-        def search_route(context : HTTP::Server::Context) : NamedTuple(callback: Callback, params: Hash(String, String))?
+        private def search_route(context : HTTP::Server::Context) : NamedTuple(callback: Callback, params: Hash(String, String))?
             search_path = '/' + context.request.method + context.request.path;
 
             callback = static_routes[search_path];
@@ -44,6 +38,11 @@ module Skeleton
             } if route.found?;
 
             nil;
+        end
+
+        def initialize
+            @tree = Radix::Tree(Callback).new;
+            @static_routes = {} of String => Callback;
         end
 
         {% for req in %w(get post put delete options patch) %}

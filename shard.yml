@@ -10,8 +10,6 @@ description: |
 crystal: 0.36.1
 
 dependencies:
-  cors:
-    github: prutya/cors
   radix:
     github: luislavena/radix
 
