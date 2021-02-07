@@ -1,6 +1,6 @@
 # Skeleton
 
-A very minimal http server api serving as a platform for incremental middleware
+A very minimal http server api serving as a platform for incremental middleware.
 
 ## Installation
 
@@ -18,13 +18,48 @@ A very minimal http server api serving as a platform for incremental middleware
 
 ```crystal
 require "skeleton"
-```
 
-TODO: Write usage instructions here
+# Create a route handler for defining sinatra-like routes
+app = Skeleton::RouteHandler.new
+
+# Define all basic HTTP method routes with callback blocks
+app.get "/" do |context|
+  # Use a regular HTTP::Context object
+  context.response.print "Hello, World"
+
+  # Each route returns the updated context back
+  context;
+end
+
+# Initialize a server with middleware passed in as an array parameter
+server = Skeleton::Server.new([
+  Skeleton::CORSHandler.new,
+  app
+])
+
+# Bind to an address on a port
+server.bind_tcp "127.0.0.1", 8080
+
+# Blocking listen
+server.listen
+
+### Non blocking version
+# spawn { server.listen }
+###
+
+```
 
 ## Development
 
-TODO: Write development instructions here
+Future additions / #TODOs
+
+* Write proper documentation
+* Make `CORSHandler` accept custom parameters.
+* Modularize the `CORSHandler` using json-like data hashes
+* Make `Skeleton::Server` conform to the `HTTP::Server` API
+* Refactor the `RouteHandler` to avoid conditionals and multiple execution paths
+* Make the `RouteHandler` serve static html
+* Try to follow MVC more tightly
 
 ## Contributing
 
