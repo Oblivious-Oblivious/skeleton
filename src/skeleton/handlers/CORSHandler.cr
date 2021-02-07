@@ -16,7 +16,7 @@ module Skeleton
             end
         end
 
-        def call(context)
+        def call(context : HTTP::Server::Context)
             context.response.headers["Access-Control-Allow-Origin"] = "*";
             context.response.headers["Access-Control-Allow-Credentials"] = "true";
             context.response.headers["Access-Control-Allow-Methods"] = "*";

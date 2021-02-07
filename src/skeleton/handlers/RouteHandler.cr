@@ -1,4 +1,3 @@
-require "http/server"
 require "radix"
 
 module Skeleton
