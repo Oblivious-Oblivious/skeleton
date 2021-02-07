@@ -18,12 +18,12 @@ module Skeleton
         end
 
         private def produce_route_result(search_path)
-            if callback = static_routes[search_path];
+            if callback = static_routes[search_path]?
                 {
                     callback: callback,
                     params: {} of String => String
                 };
-            elsif route = tree.find search_path
+            elsif (route = tree.find(search_path)).found?
                 {
                     callback: route.payload,
                     params: route.params
