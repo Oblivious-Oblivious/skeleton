@@ -9,35 +9,57 @@ module Skeleton
 
         getter :tree, :static_routes;
 
-        private def add_route(key : String, callback : Callback)
-            if key.includes?(':') || key.includes?('*')
-                tree.add key, callback;
+        private def produce_call(context : HTTP::Server::Context)
+            if route_request = search_route context.request
+                route_request[:callback].call context, route_request[:params];
             else
-                static_routes[key] = callback;
-                if key.ends_with? '/'
-                    static_routes[key[0..-2]] = callback;
-                else
-                    static_routes[key + '/'] = callback;
-                end
+                call_next context;
             end
         end
 
-        private def search_route(context : HTTP::Server::Context) : NamedTuple(callback: Callback, params: Hash(String, String))?
-            search_path = '/' + context.request.method + context.request.path;
+        private def produce_route_result(search_path)
+            if callback = static_routes[search_path];
+                {
+                    callback: callback,
+                    params: {} of String => String
+                };
+            elsif route = tree.find search_path
+                {
+                    callback: route.payload,
+                    params: route.params
+                };
+            else
+                nil;
+            end
+        end
 
-            callback = static_routes[search_path];
-            return {
-                callback: callback,
-                params: {} of String => String
-            } if callback;
+        private def ensure_full_path(key : String, callback : Callback)
+            if key.ends_with? '/'
+                static_routes[key[0..-2]] = callback;
+            else
+                static_routes[key + '/'] = callback;
+            end
+        end
 
-            route = tree.find search_path;
-            return {
-                callback: route.payload,
-                params: route.params
-            } if route.found?;
+        private def setup_static_route_callback(key : String, callback : Callback)
+            static_routes[key] = callback;
+            ensure_full_path key, callback;
+        end
 
-            nil;
+        private def produce_route_addition(key : String, callback : Callback)
+            if key.includes?(':') || key.includes?('*')
+                tree.add key, callback;
+            else
+                setup_static_route_callback key, callback;
+            end
+        end
+
+        private def add_route(key : String, callback : Callback)
+            produce_route_addition key, callback;
+        end
+
+        private def search_route(request) : NamedTuple(callback: Callback, params: Hash(String, String))?
+            produce_route_result '/' + request.method + request.path;
         end
 
         def initialize
@@ -45,18 +67,14 @@ module Skeleton
             @static_routes = {} of String => Callback;
         end
 
-        {% for req in %w(get post put delete options patch) %}
-            def {{req.id}}(path : String, &block : Callback)
-                add_route "/{{req.id.upcase}}" + path, block;
+        {% for req in %w(get post put delete head trace connect options patch) %}
+            def {{req.id}}(path : String, &callback : Callback)
+                add_route "/{{req.id.upcase}}" + path, callback;
             end
         {% end %}
 
         def call(context : HTTP::Server::Context)
-            if route_context = search_route context
-                route_context[:callback].call context, route_context[:params];
-            else
-                call_next context;
-            end
+            produce_call context;
         end
     end
 end

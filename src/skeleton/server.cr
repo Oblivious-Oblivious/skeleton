@@ -14,13 +14,18 @@ module Skeleton
             @address = Socket::IPAddress.new "0.0.0.0", 0;
         end
 
-        def bind(ip_address, port)
+        def bind_tcp(ip_address, port)
             @address = server.bind_tcp ip_address, port;
         end
 
         def listen
             puts "Listening on http://#{address}";
             server.listen;
+        end
+
+        def close
+            puts "Closing gracefully";
+            server.close;
         end
     end
 end
