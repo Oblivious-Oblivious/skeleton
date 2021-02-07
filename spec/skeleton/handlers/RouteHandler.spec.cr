@@ -7,6 +7,11 @@ describe Skeleton::RouteHandler do
     routes = app.static_routes;
     tree = app.tree;
 
+    it "is an HTTP handler" do
+        route_handler = Skeleton::RouteHandler.new;
+        route_handler.methods.should contain "call";
+    end
+
     it "defines static paths without variables" do
         routes.keys.should contain "/GET";
         routes.keys.should contain "/GET/";
