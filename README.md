@@ -14,7 +14,7 @@ A very minimal http server api serving as a platform for incremental middleware.
    ```yaml
    dependencies:
      skeleton:
-       github: Oblivious-Oblivious/Skeleton
+       github: Oblivious-Oblivious/skeleton
    ```
 
 2. Run `shards install`
