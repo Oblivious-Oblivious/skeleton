@@ -3,6 +3,7 @@ language: crystal
 
 crystal:
   - latest
+  - nightly
 
 script:
   - crystal spec spec/*.spec.cr
