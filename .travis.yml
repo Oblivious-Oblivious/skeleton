@@ -6,4 +6,5 @@ crystal:
   - nightly
 
 script:
+  - shards install --ignore-crystal-version
   - crystal spec spec/*.spec.cr
