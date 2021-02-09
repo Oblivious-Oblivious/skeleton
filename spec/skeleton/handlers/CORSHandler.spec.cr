@@ -5,10 +5,12 @@ def send_request(req)
     response : HTTP::Client::Response;
     app = Skeleton::RouteHandler.new;
     app.get "/" { |c, p| c.response.print "THIS IS MAI RESPONS"; c; };
-    server = Skeleton::Server.new([Skeleton::CORSHandler.new, app]);
-    server.bind_tcp "localhost", 8888;
+    server = Skeleton::Server.new
+        .add(Skeleton::CORSHandler.new)
+        .add(app)
+        .bind_tcp("127.0.0.1", 8888);
     spawn { server.listen };
-    client = HTTP::Client.new "localhost", 8888;
+    client = HTTP::Client.new "127.0.0.1", 8888;
     case req
     when "get"
         response = client.get("/");
