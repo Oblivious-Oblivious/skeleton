@@ -22,7 +22,7 @@ module Skeleton
             context.response.headers["Access-Control-Allow-Methods"] = "*";
             context.response.headers["Access-Control-Allow-Headers"] = "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization";
             
-            check_for_options(context);
+            check_for_options context;
         end
     end
 end
