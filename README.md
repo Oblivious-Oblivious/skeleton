@@ -36,17 +36,12 @@ app.get "/" do |context|
   context;
 end
 
-# Initialize a server with middleware passed in as an array parameter
-server = Skeleton::Server.new([
-  Skeleton::CORSHandler.new,
-  app
-])
-
-# Bind to an address on a port
-server.bind_tcp "127.0.0.1", 8080
-
-# Blocking listen
-server.listen
+# Initialize a server choose what middleware to add
+server = Skeleton::Server.new
+  .add(Skeleton::CORSHandler.new)
+  .add(app)
+  .bind_tcp("127.0.0.1", 8080) # Bind to an address on a port
+  .listen;                     # Blocking listen
 
 ### Non blocking version
 # spawn { server.listen }
