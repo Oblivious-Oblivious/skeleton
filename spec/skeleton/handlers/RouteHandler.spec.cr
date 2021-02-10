@@ -27,8 +27,10 @@ describe Skeleton::RouteHandler do
     end
 
     it "returns the renderable value when then callback is called" do
+        # TODO
     end
 
-    # it "saves variables in the tree" do
-    # end
+    it "saves variables in the tree" do
+        # TODO
+    end
 end
