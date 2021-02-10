@@ -56,7 +56,6 @@ Future additions / #TODOs
 * Write proper documentation
 * Make `CORSHandler` accept custom parameters.
 * Modularize the `CORSHandler` using json-like data hashes
-* Make `Skeleton::Server` conform to the `HTTP::Server` API
 * Refactor the `RouteHandler` to avoid conditionals and multiple execution paths
 * Make the `RouteHandler` serve static html
 * Try to follow MVC more tightly
