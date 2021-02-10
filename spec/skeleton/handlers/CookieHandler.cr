@@ -1,6 +1,6 @@
 describe Skeleton::CookieHandler do
     it "is an HTTP handler" do
         cookie_handler = Skeleton::CookieHandler.new;
-        cookie_handler.methods.should contain "call";
+        cookie_handler.responds_to?(:call).should eq true;
     end
 end
