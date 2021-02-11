@@ -13,18 +13,4 @@ dependencies:
   radix:
     github: luislavena/radix
 
-#development_dependencies:
-  #(ADD PRIVATE DEPENDS)
-    #(ADD PRIVATE SUB DEPENDS)
-
-#libraries:
-  #(ADD LIBS)
-
-executables:
-  - skeleton
-
-targets:
-  shards:
-    main: src/skeleton.cr
-
 license: GPLv3
