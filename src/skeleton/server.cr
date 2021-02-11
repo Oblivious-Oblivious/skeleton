@@ -1,4 +1,6 @@
 module Skeleton
+    SERVER_LIST = [] of Skeleton::Server;
+
     class Server
         getter :server, :address, :handlers;
         
@@ -96,6 +98,8 @@ module Skeleton
         end
 
         def listen
+            # Store into a global list for concurrent handling
+            Skeleton::SERVER_LIST << self;
             puts "Listening on http://#{address}";
             server.listen;
         end
