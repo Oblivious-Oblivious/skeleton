@@ -31,21 +31,23 @@ describe Skeleton::CORSHandler do
 
     context "when the request method is `OPTIONS`" do
         options_response = send_request("options");
-        # it "has a response status of NO_CONTENT" do
+
+        # it "has a response status `NO_CONTENT`" do
         #     options_response.status.should eq HTTP::Status::NO_CONTENT;
         # end
 
         it "has Content-Type of `text/plain`" do
             options_response.headers["Content-Type"].should eq "text/plain";
         end
-        
-        # it "has Content-Length of `0`" do
-        #     options_response.headers["Content-Length"].should eq "0";
-        # end
+
+        it "has Access-Control-Allow-Methods of `GET HEAD DELETE OPTIONS PUT PATCH`" do
+            options_response.headers["Access-Control-Allow-Methods"] = "GET, HEAD, DELETE, OPTIONS, PUT, PATCH";
+        end
     end
 
     context "when the request method is anything else" do
         get_response = send_request("get");
+        
         # it "has Access-Control-Allow-Origin on `*`" do
         #     get_response.headers["Access-Control-Allow-Origin"].should eq "*";
         # end
@@ -55,11 +57,7 @@ describe Skeleton::CORSHandler do
         # end
 
         # it "has Access-Control-Allow-Methods on `*`" do
-        #     get_response.headers["Access-Control-Allow-Methods"].should eq "*";
-        # end
-
-        # it "has Access-Control-Allow-Headers on `DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization`" do
-        #     get_response.headers["Access-Control-Allow-Headers"].should eq "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization";
+        #     get_response.headers["Access-Control-Allow-Methods"].should eq "Content-Type";
         # end
     end
 end
