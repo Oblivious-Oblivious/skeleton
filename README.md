@@ -1,7 +1,7 @@
 # Skeleton
 
 [![Built with Crystal](https://img.shields.io/badge/built%20with-crystal-000000.svg?)](https://crystal-lang.org/)
-[![Version](https://img.shields.io/badge/version-0.3.0-orange)](https://github.com/Oblivious-Oblivious/Skeleton/releases/latest)
+[![Version](https://img.shields.io/badge/release-v0.3.0-orange)](https://github.com/Oblivious-Oblivious/Skeleton/releases/latest)
 [![GPLv3 License](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](./COPYING) 
 
 [![CircleCI](https://circleci.com/gh/Oblivious-Oblivious/skeleton.svg?style=shield)](https://circleci.com/gh/Oblivious-Oblivious/skeleton)
