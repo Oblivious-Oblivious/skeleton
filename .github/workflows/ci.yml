@@ -16,7 +16,7 @@ jobs:
         include:
           - {os: ubuntu-latest, crystal: latest}
           - {os: macos-latest, crystal: latest}
-    runs_on: ${{matrix.os}}
+    runs-on: ${{matrix.os}}
     steps:
       - uses: oprypin/install-crystal@v1
         with:
