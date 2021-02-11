@@ -20,6 +20,5 @@ jobs:
         with:
           crystal: ${{matrix.crystal}}
       - uses: actions/checkout@v2
-      - run: SHARDS_OPTS=--ignore-crystal-version
-      - run: shards install
+      - run: shards install --ignore-crystal-version
       - run: crystal spec --error-on-warnings --error-trace
