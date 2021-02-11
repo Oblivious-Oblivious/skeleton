@@ -8,8 +8,8 @@ jobs: # a collection of jobs
       - image: crystallang/crystal:latest
     steps: # a collection of executable steps
       - checkout # checks out source code to working directory
-      - restore_cache: # Restore dependency cache
-          key: dependency-cache-{{ checksum "shard.lock" }}
+      #- restore_cache: # Restore dependency cache
+      #  key: dependency-cache-{{ checksum "shard.lock" }}
       - run:
           name: Install dependencies.
           command: shards install
