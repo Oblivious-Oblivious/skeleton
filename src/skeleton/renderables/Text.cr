@@ -1,4 +1,4 @@
-require "./renderable"
+require "./Renderable"
 
 class Skeleton::Text::HTML
     include Skeleton::Renderable;

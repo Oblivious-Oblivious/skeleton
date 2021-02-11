@@ -1,4 +1,4 @@
-require "./renderable"
+require "./Renderable"
 
 class Skeleton::Application::JSON
     include Skeleton::Renderable;
