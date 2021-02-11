@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-0.3.0-orange)](https://github.com/Oblivious-Oblivious/Skeleton/releases/latest)
 [![GPLv3 License](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](./COPYING) 
 
-[![Build Status](https://travis-ci.com/Oblivious-Oblivious/skeleton.svg?branch=master)](https://travis-ci.com/github/Oblivious-Oblivious/Skeleton)
+[![CircleCI](https://circleci.com/gh/Oblivious-Oblivious/skeleton.svg?style=shield)](https://circleci.com/gh/Oblivious-Oblivious/skeleton)
 
 A very minimal http server api serving as a platform for incremental middleware.
 
