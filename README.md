@@ -5,6 +5,8 @@
 [![GPLv3 License](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](./COPYING) 
 
 [![CircleCI](https://circleci.com/gh/Oblivious-Oblivious/skeleton.svg?style=shield)](https://circleci.com/gh/Oblivious-Oblivious/skeleton)
+[![CI](https://github.com/Oblivious-Oblivious/skeleton/workflows/CI/badge.svg)](https://github.com/Oblivious-Oblivious/skeleton/actions?query=workflow%3ACI)
+[![CI (nightly)](https://github.com/Oblivious-Oblivious/skeleton/workflows/CI%20(nightly)/badge.svg)](https://github.com/Oblivious-Oblivious/skeleton/actions?query=workflow%3A%22CI+%28nightly%29%22)
 
 A very minimal http server api serving as a platform for incremental middleware.
 
