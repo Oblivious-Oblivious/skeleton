@@ -1,5 +1,6 @@
 # Skeleton
 
+[![Built with Crystal](https://img.shields.io/badge/built%20with-crystal-000000.svg?)](https://crystal-lang.org/)
 [![Version](https://img.shields.io/badge/version-0.2.1-orange)](https://github.com/Oblivious-Oblivious/Skeleton/releases/latest)
 [![GPLv3 License](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](./COPYING) 
 
@@ -24,24 +25,16 @@ A very minimal http server api serving as a platform for incremental middleware.
 ```crystal
 require "skeleton"
 
-# Create a route handler for defining sinatra-like routes
-app = Skeleton::RouteHandler.new
-
-# Define all basic HTTP method routes with callback blocks
-app.get "/" do |context|
-  # Use a regular HTTP::Context object
-  context.response.print "Hello, World"
-
-  # Each route returns the updated context back
-  context;
-end
-
 # Initialize a server choose what middleware to add
 server = Skeleton::Server.new
   .add(Skeleton::CORSHandler.new)
-  .add(app)
-  .bind_tcp("127.0.0.1", 8080) # Bind to an address on a port
-  .listen;                     # Blocking listen
+  .add(Skeleton::RouteHandler.new # Create a route handler for defining sinatra-like routes
+    .get "/" {                    # Define all basic HTTP method routes with callback blocks
+      "Hello World"               # Return a `Renderable` value
+    }
+  )
+  .bind_tcp("127.0.0.1", 8080)    # Bind to an address on a port
+  .listen;                        # Blocking listen
 
 ### Non blocking version
 # spawn { server.listen }
@@ -54,10 +47,7 @@ server = Skeleton::Server.new
 Future additions / #TODOs
 
 * Write proper documentation
-* Make `CORSHandler` accept custom parameters.
-* Modularize the `CORSHandler` using json-like data hashes
 * Refactor the `RouteHandler` to avoid conditionals and multiple execution paths
-* Make the `RouteHandler` serve static html
 * Try to follow MVC more tightly
 
 ## Contributing
