@@ -2,6 +2,10 @@ version: 2
 jobs:
   build:
     working_directory: ~/skeleton
+    filters:
+      branches:
+        only:
+          - master
     docker:
       - image: crystallang/crystal:latest
     steps:
