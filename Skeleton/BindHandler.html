@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="master-dev">
+<meta name="crystal_docs.project_name" content="skeleton">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="skeleton">
+  <title>Skeleton::BindHandler - skeleton master-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          skeleton
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="skeleton/Skeleton" data-name="skeleton">
+      <a href="../Skeleton.html">Skeleton</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="skeleton/Skeleton/Application" data-name="skeleton::application">
+      <a href="../Skeleton/Application.html">Application</a>
+      
+        <ul>
+  
+  <li class=" " data-id="skeleton/Skeleton/Application/JSON" data-name="skeleton::application::json">
+      <a href="../Skeleton/Application/JSON.html">JSON</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/AuthenticationHandler" data-name="skeleton::authenticationhandler">
+      <a href="../Skeleton/AuthenticationHandler.html">AuthenticationHandler</a>
+      
+    </li>
+  
+  <li class=" current" data-id="skeleton/Skeleton/BindHandler" data-name="skeleton::bindhandler">
+      <a href="../Skeleton/BindHandler.html">BindHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/CompressHandler" data-name="skeleton::compresshandler">
+      <a href="../Skeleton/CompressHandler.html">CompressHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/CookieHandler" data-name="skeleton::cookiehandler">
+      <a href="../Skeleton/CookieHandler.html">CookieHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/CORSHandler" data-name="skeleton::corshandler">
+      <a href="../Skeleton/CORSHandler.html">CORSHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/CSRFHandler" data-name="skeleton::csrfhandler">
+      <a href="../Skeleton/CSRFHandler.html">CSRFHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/DatabaseHandler" data-name="skeleton::databasehandler">
+      <a href="../Skeleton/DatabaseHandler.html">DatabaseHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/EmailHandler" data-name="skeleton::emailhandler">
+      <a href="../Skeleton/EmailHandler.html">EmailHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/ErrorHandler" data-name="skeleton::errorhandler">
+      <a href="../Skeleton/ErrorHandler.html">ErrorHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/FileIOHandler" data-name="skeleton::fileiohandler">
+      <a href="../Skeleton/FileIOHandler.html">FileIOHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/LogHandler" data-name="skeleton::loghandler">
+      <a href="../Skeleton/LogHandler.html">LogHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/NullHandler" data-name="skeleton::nullhandler">
+      <a href="../Skeleton/NullHandler.html">NullHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/Renderable" data-name="skeleton::renderable">
+      <a href="../Skeleton/Renderable.html">Renderable</a>
+      
+    </li>
+  
+  <li class="parent " data-id="skeleton/Skeleton/RouteHandler" data-name="skeleton::routehandler">
+      <a href="../Skeleton/RouteHandler.html">RouteHandler</a>
+      
+        <ul>
+  
+  <li class=" " data-id="skeleton/Skeleton/RouteHandler/Callback" data-name="skeleton::routehandler::callback">
+      <a href="../Skeleton/RouteHandler/Callback.html">Callback</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/RouteHandler/RouteRequestType" data-name="skeleton::routehandler::routerequesttype">
+      <a href="../Skeleton/RouteHandler/RouteRequestType.html">RouteRequestType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/Server" data-name="skeleton::server">
+      <a href="../Skeleton/Server.html">Server</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/SessionHandler" data-name="skeleton::sessionhandler">
+      <a href="../Skeleton/SessionHandler.html">SessionHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/StaticFileHandler" data-name="skeleton::staticfilehandler">
+      <a href="../Skeleton/StaticFileHandler.html">StaticFileHandler</a>
+      
+    </li>
+  
+  <li class="parent " data-id="skeleton/Skeleton/Text" data-name="skeleton::text">
+      <a href="../Skeleton/Text.html">Text</a>
+      
+        <ul>
+  
+  <li class=" " data-id="skeleton/Skeleton/Text/HTML" data-name="skeleton::text::html">
+      <a href="../Skeleton/Text/HTML.html">HTML</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/Skeleton/WebSocketHandler" data-name="skeleton::websockethandler">
+      <a href="../Skeleton/WebSocketHandler.html">WebSocketHandler</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="skeleton/String" data-name="string">
+      <a href="../String.html">String</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Skeleton::BindHandler
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Skeleton/BindHandler.html">Skeleton::BindHandler</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">HTTP::Handler</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#call(context:HTTP::Server::Context)-instance-method" class="signature"><strong>#call</strong>(context : HTTP::Server::Context)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="call(context:HTTP::Server::Context)-instance-method">
+      <div class="signature">
+        
+        def <strong>call</strong>(context : HTTP::Server::Context)
+
+        <a class="method-permalink" href="#call(context:HTTP::Server::Context)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
