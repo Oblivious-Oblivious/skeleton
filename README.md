@@ -3,6 +3,7 @@
 [![Built with Crystal](https://img.shields.io/badge/built%20with-crystal-000000.svg?)](https://crystal-lang.org/)
 [![GitHub release](https://img.shields.io/github/release/Oblivious-Oblivious/skeleton.svg)](https://github.com/Oblivious-Oblivious/skeleton/releases)
 [![GPLv3 License](https://img.shields.io/badge/license-GPL%20v3-yellow.svg)](./COPYING)
+[![Docs](https://img.shields.io/badge/docs-available-purple.svg)](https://oblivious-oblivious.github.io/skeleton)
 
 [![CircleCI](https://circleci.com/gh/Oblivious-Oblivious/skeleton.svg?style=shield)](https://circleci.com/gh/Oblivious-Oblivious/skeleton)
 [![CI](https://github.com/Oblivious-Oblivious/skeleton/workflows/CI/badge.svg)](https://github.com/Oblivious-Oblivious/skeleton/actions?query=workflow%3ACI)
