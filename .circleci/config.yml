@@ -19,3 +19,6 @@ jobs:
       - run:
           name: Generate Docs
           command: crystal docs
+      - run:
+          name: Deploy Docs
+          command: sh .circleci/deploy-gh-pages.sh docs
