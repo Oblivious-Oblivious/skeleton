@@ -20,3 +20,22 @@ jobs: # a collection of jobs
       - run:
           name: test
           command: crystal spec src/*.cr
+      - run:
+          name: Generate Docs
+          command: crystal docs
+  docs-deploy:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - attach_workspace:
+        at: docs/
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "me262thanos@gmail.com"
+            git config user.name "Oblivious-Oblivious"
+      - run:
+          name: Deploy docs to gh-pages
+          command: gh-pages --dotfiles --message "Updates" --dist docs/
