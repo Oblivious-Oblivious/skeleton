@@ -39,7 +39,7 @@ class Skeleton::RouteHandler
         end
     end
 
-    private def ensure_full_path(key : String, callback : Callback)
+    private def ensure_full_path(key, callback : Callback)
         if key.ends_with? '/'
             static_routes[key[0..-2]] = callback;
         else
@@ -47,21 +47,17 @@ class Skeleton::RouteHandler
         end
     end
 
-    private def setup_static_route_callback(key : String, callback : Callback)
+    private def setup_static_route_callback(key, callback : Callback)
         static_routes[key] = callback;
         ensure_full_path key, callback;
     end
 
-    private def produce_route_addition(key : String, callback : Callback)
+    private def add_route(key, callback : Callback)
         if key.includes?(':') || key.includes?('*')
             tree.add key, callback;
         else
             setup_static_route_callback key, callback;
         end
-    end
-
-    private def add_route(key : String, callback : Callback)
-        produce_route_addition key, callback;
     end
 
     private def search_route(request) : RouteRequestType
@@ -74,7 +70,7 @@ class Skeleton::RouteHandler
     end
 
     {% for req in %w(get post put delete head trace connect options patch) %}
-        def {{req.id}}(path : String, &callback : Callback)
+        def {{req.id}}(path, &callback : Callback)
             add_route "/{{req.id.upcase}}" + path, callback;
             self;
         end
